@@ -1,0 +1,28 @@
+{namespace bitbucket.config.example.hook.simple}
+
+/**
+ * @param config
+ * @param? errors
+ */
+{template .formContents}
+ <b>{getText('bitbucket.tutorial.soy.templates.intro')}</b>
+    {call aui.form.textField}
+        {param id: 'projectName' /}
+        {param value: $config['projectName'] /}
+        {param labelContent: getText('bitbucket.web.test.hook.config.label') /}
+        {param descriptionText: getText('bitbucket.web.test.hook.config.description') /}        
+        {param extraClasses: 'long' /}
+        {param isRequired: 'true'/}
+        {param errorTexts: $errors ? $errors['projectName'] : null /}
+    {/call}
+    {call aui.form.textField}
+        {param id: 'branchName' /}
+        {param value: $config['branchName'] /}
+        {param labelContent: getText('bitbucket.web.test.hook.branch.label') /}
+        {param descriptionText: getText('bitbucket.web.test.hook.branch.description') /}        
+        {param extraClasses: 'long' /}
+        {param fieldWidth: 'long' /}
+        {param isRequired: 'true'/}
+        {param errorTexts: $errors ? $errors['branchName'] : null /}
+    {/call} 
+{/template}

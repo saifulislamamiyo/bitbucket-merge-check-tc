@@ -1,0 +1,69 @@
+{namespace bitbucket.config.example.hook.simple}
+
+/**
+ * @param config
+ * @param? errors
+ */
+{template .formContents_bak}
+ <b>{getText('bitbucket.tutorial.soy.templates.intro')}</b>
+    <table class="aui" id="basic" style="width:100%">
+        <thead>
+            <tr>
+                <th style="width:50%">Teamcity Project ID</th>
+                <th style="width:50%">Branchname rules</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {call aui.form.textField}
+                    {param id: 'projectName1' /}
+                    {param value: $config['projectName1'] /}
+                    {param labelContent: getText('bitbucket.web.test.hook.config.label') /}  
+                    {param tooltipArguments: getText('bitbucket.web.test.hook.config.description')/}
+                    {param extraClasses: 'long' /}
+                    {param fieldWidth: 'long' /}
+                    {param isRequired: 'true'/}
+                    {param errorTexts: $errors ? $errors['projectName1'] : null /}
+                    {/call}
+		</td>
+                <td>
+                    {call aui.form.textField}
+                    {param id: 'branchName1' /}
+                    {param value: $config['branchName1'] /}
+                    {param labelContent: getText('bitbucket.web.test.hook.branch.label') /}
+                    {param tooltipArguments: getText('bitbucket.web.test.hook.branch.description')/}  
+                    {param extraClasses: 'long' /}
+                    {param fieldWidth: 'long' /}
+                    {param isRequired: 'true'/}
+                    {param errorTexts: $errors ? $errors['branchName1'] : null /}
+                    {/call}
+		</td>
+            </tr>
+            <tr>
+                <td>
+                    {call aui.form.textField}
+                    {param id: 'projectName2' /}
+                    {param value: $config['projectName2'] /}
+                    {param labelContent: getText('bitbucket.web.test.hook.config.label') /}  
+                    {param extraClasses: 'long' /}
+                    {param fieldWidth: 'long' /}
+                    {param isRequired: 'true'/}
+                    {param errorTexts: $errors ? $errors['projectName2'] : null /}
+                    {/call}
+		</td>
+                <td>
+                    {call aui.form.textField}
+                    {param id: 'branchName2' /}
+                    {param value: $config['branchName2'] /}
+                    {param labelContent: getText('bitbucket.web.test.hook.branch.label') /}       
+                    {param extraClasses: 'long' /}
+                    {param fieldWidth: 'long' /}
+                    {param isRequired: 'true'/}
+                    {param errorTexts: $errors ? $errors['branchName2'] : null /}
+                    {/call}
+		</td>
+            </tr>
+        <tbody>
+    </table>
+{/template}
