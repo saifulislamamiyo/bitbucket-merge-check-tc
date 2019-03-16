@@ -35,4 +35,3 @@ From BitBucket Administration -> Manage add-ons -> Upload add-on upload the jar 
     Specify the **Branch name rules** as regular expressions. For example, to get only the **branchName** from "refs/heads/feature/branchName", specify "refs/heads/feature/(.\*)". If expectation is **feature/branchName**, specify "refs/heads/(feature/.\*)".
     Multiple branch rules can be specified separated by comma.
 	
-For a step-by-step guide, refer to this wiki: http://mksrvwiki01:8080/wiki/pages/editpage.action?pageId=46173454
